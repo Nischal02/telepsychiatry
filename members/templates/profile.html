@@ -1,0 +1,113 @@
+{% extends "dashboard.html" %}
+{% load static %}
+{% block start %}
+
+<h1 class="py-2 mx-3 mb-2">Welcome {{request.user.first_name}} {{request.user.last_name}} </h1>
+            <!-- <hr class="mb-0"/> -->
+            <header class="">
+                <p class="">
+                    <span>Smile,</span> 
+                    its a free therapy.
+                </p>
+            </header>
+
+<div class="loading text-center">
+    
+    <p>Loading...</p>
+</div>
+
+
+<div class="container-fluid" role="main">
+    
+
+    <div class="row">          
+        <div class="col-4 mt-5 ml-4">
+            <img class="profile" src="{% static 'members/images/profile.png' %}" alt="Profile Image"> 
+        </div>
+        
+        <div class="col-5 mt-5 p-3">
+            <h1>{{request.user.first_name}} {{request.user.last_name}}</h1>
+            <p>Address</p>
+            <p>Email, Phone Number</p>
+            <button class="btn btn-outline-secondary">Edit Profile</button>
+        </div>          
+    </div>
+    
+    <div class="row mt-5 ml-4">
+        <div class="col-5">
+            <h1>Past Analysis</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Analysis Type</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-01-20</td>
+                        <td>Mental health</td>
+                        <td>Positive</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-20</td>
+                        <td>Mental health</td>
+                        <td>Positive</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-20</td>
+                        <td>Mental health</td>
+                        <td>Positive</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="col-5">
+            <h1>Appointments</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date and time</th>
+                        <th>Doctor Name</th>
+                        <th>Contact Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-01-20  2:30 pm</td>
+                        <td>Harry </td>
+                        <td>98563214578</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-20  4:30 pm</td>
+                        <td>Kishor </td>
+                        <td>98563214578</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-20  2:30 pm</td>
+                        <td>padma</td>
+                        <td>98563214578</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Add a script to show/hide the loading div based on your needs
+    document.addEventListener("DOMContentLoaded", function() {
+        // Assuming you have a class 'loading' for the loading div
+        var loadingDiv = document.querySelector('.loading');
+        loadingDiv.style.display = 'none'; // Set 'none' to hide, 'flex' to show
+    });
+</script>
+
+{% endblock %}

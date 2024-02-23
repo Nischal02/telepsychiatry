@@ -1,0 +1,80 @@
+{% extends "dashboard.html" %}
+{% load static %}
+{% block start %}
+
+
+
+<div class="container" role="main">
+
+    <div class="jumbotron">
+      
+
+      <h3>Enter some text below for sentiment analysis:</h3>
+      <textarea id="txt"></textarea>
+      <h3>Verdict:</h3>
+      <pre id="result"></pre>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- English words -->
+  <script src="../static/js/afinn_en.js"></script>
+
+  <!-- Emoticons -->
+  <script src="../static/js/afinn_emoticon.js"></script>
+  <!-- Algorithm -->
+  <script src="../static/js/sentiment.js"></script>
+
+  <script>
+    var afinn = $.extend(afinn_en, afinn_emoticon);
+
+    function setLanguage(languageName) {
+      $("#result").empty();
+      $("#languageSelector").text(languageName);
+      switch (languageName) {
+        case 'English':
+          {
+            afinn = $.extend(afinn_en, afinn_emoticon);
+            break;
+          }
+      }
+    }
+
+    $(document).ready(function() {
+
+      $(".languageSelector").on("click", function(e) {
+        e.preventDefault();
+        setLanguage($(this).text());
+      });
+
+      $('[data-toggle="tooltip"]').tooltip({
+        'placement': 'bottom'
+      });
+
+      $('#txt').focus();
+      $('#txt').bind('input propertychange', function() {
+        var sentiment_result = sentiment($('#txt').val())
+        $('#result').text(JSON.stringify(sentiment_result, undefined, 2));
+      });
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91393607-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-91393607-4');
+  </script>
+{% endblock %}

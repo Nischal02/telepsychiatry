@@ -1,0 +1,80 @@
+{% extends "dashboard.html" %}
+{% load static %}
+{% block start %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text">
+           
+            <div class="doctor-info">
+                <img src="{% static 'members/images/profile.png' %}" alt="Dr. John Doe">
+                <h2>Dr. John Doe</h2>
+                <p>Degree: Doctor of Medicine (MD)</p>
+                <p>Specialization: Psychiatric </p>
+                <p>Experience: 10 years</p>
+              
+                <h3>Office Hours</h3>
+                <ul>
+                  <li>Monday: 9:00 AM - 5:00 PM</li>
+                  <li>Tuesday: 9:00 AM - 5:00 PM</li>
+                  <li>Wednesday: 9:00 AM - 12:00 PM</li>
+                  <li>Thursday: 9:00 AM - 5:00 PM</li>
+                  <li>Friday: 9:00 AM - 3:00 PM</li>
+                </ul>
+              </div>
+              
+              <div class="doctor-info">
+                <img src="{% static 'members/images/profile.png' %}" alt="Dr. Jane Smith">
+                <h2>Dr. Jane Smith</h2>
+                <p>Degree: Doctor of Medicine</p>
+                <p>Specialization: Psychiatric</p>
+                <p>Experience: 8 years</p>
+              
+                <h3>Office Hours</h3>
+                <ul>
+                  <li>Monday: 10:00 AM - 6:00 PM</li>
+                  <li>Wednesday: 10:00 AM - 3:00 PM</li>
+                  <li>Thursday: 10:00 AM - 6:00 PM</li>
+                  <li>Friday: 10:00 AM - 4:00 PM</li>
+                  <li>Saturday: 9:00 AM - 1:00 PM</li>
+                </ul>
+              </div>
+        </div>
+        <div class="col-md-6">
+            <div class="doctor-info">
+                <img src="{% static 'members/images/profile.png' %}" alt="Dr. Another Doctor">
+                <h2>Dr. Another Doctor</h2>
+                <p>Degree: Doctor of Medicine (MD)</p>
+                <p>Specialization: Another Specialization</p>
+                <p>Experience: 15 years</p>
+              
+                <h3>Office Hours</h3>
+                <ul>
+                  <li>Monday: 8:00 AM - 4:00 PM</li>
+                  <li>Wednesday: 8:00 AM - 12:00 PM</li>
+                  <li>Thursday: 8:00 AM - 6:00 PM</li>
+                  <li>Friday: 8:00 AM - 3:00 PM</li>
+                  <li>Saturday: 10:00 AM - 2:00 PM</li>
+                </ul>
+              </div>
+              
+              <div class="doctor-info">
+                <img src="{% static 'members/images/profile.png' %}" alt="Dr. Additional Doctor">
+                <h2>Dr. Additional Doctor</h2>
+                <p>Degree: Doctor of Osteopathic Medicine (DO)</p>
+                <p>Specialization: Additional Specialization</p>
+                <p>Experience: 12 years</p>
+              
+                <h3>Office Hours</h3>
+                <ul>
+                  <li>Monday: 9:00 AM - 5:00 PM</li>
+                  <li>Tuesday: 9:00 AM - 5:00 PM</li>
+                  <li>Thursday: 9:00 AM - 5:00 PM</li>
+                  <li>Friday: 9:00 AM - 4:00 PM</li>
+                  <li>Saturday: 10:00 AM - 1:00 PM</li>
+                </ul>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
