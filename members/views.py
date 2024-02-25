@@ -79,3 +79,9 @@ def appointments(request):
 
 def Analyze(request):
     return render(request, "Analyze.html")
+
+def Review(request):
+    return render(request, "Review.html")
+
+def Editprofile(request):
+    return render(request, "Editprofile.html")

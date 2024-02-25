@@ -29,5 +29,7 @@ urlpatterns = [
     path('specialists/', specialists, name = "specialists"),
     path('appointments/', appointments, name = "appointments"),
     path('Analyze/', Analyze, name = "Analyze"),
+    path('Review/', Review, name = "Review"),
+    path('Editprofile/', Editprofile, name = "Editprofile"),
     path('admin/', admin.site.urls),
 ]
