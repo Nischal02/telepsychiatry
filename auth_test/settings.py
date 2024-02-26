@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-&$g$i5w2)-)@a)6u3u6#$)-)$!4jbhpa@p9z#4&j*4(k+-)3u8
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'members.CustomUser'
 
 
 # Application definition
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'members'
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

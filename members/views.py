@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate , login , logout
 from django.contrib.auth.decorators import login_required
-
-
+from .models import *
+from .validators import *
 # Create your views here.
 
 def signin(request):
@@ -13,7 +12,7 @@ def signin(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        if not User.objects.filter(username = username).exists():
+        if not CustomUser.objects.filter(username = username).exists():
             messages.error(request, 'Invalid username')
             return redirect('/signin/')
         
@@ -37,18 +36,37 @@ def signup(request):
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         username = request.POST.get('username')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
         password = request.POST.get('password')
     
-        user = User.objects.create(
-            first_name = first_name,
-            last_name = last_name,
-            username = username
-        )
+        try:
+            validate_name(first_name)
+            validate_name(last_name)
+            validate_password(password)
+            validate_email(email)
+            validate_email_domain(email)
 
-        user.set_password(password)
-        user.save()
-        return redirect('/signin/')
+            # If all validations pass, create user or do further processing
+            user = CustomUser.objects.create(
+                full_name = first_name + last_name,
+                email = email,
+                phone = phone,
+                username = username
+        )            
+        # Additional processing or redirecting can be done here
+            user.set_password(password)
+            user.save()
 
+            messages.success(request, 'Account created successfully!')
+            return redirect('signin')
+
+        except ValidationError as e:
+            messages.error(request, e.message)
+            return redirect('signup')
+
+
+        
     return render(request, 'signup.html')
 
 def signout(request):

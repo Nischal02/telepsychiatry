@@ -22,7 +22,7 @@ urlpatterns = [
     path('landing/', landing_page, name = 'landingpage'),
     path('signup/', signup, name = 'signup'),
     path('signin/', signin, name = 'signin'),
-    path('dashboard/', dashboard),
+    path('dashboard/', dashboard, name = 'dashboard'),
     path('signout/', signout, name = "signout"),
     path('profile/', profile_page, name = "profile"),
     path('quicktest/', quicktest, name = "quicktest"),
