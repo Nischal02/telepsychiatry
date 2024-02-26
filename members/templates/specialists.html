@@ -1,0 +1,80 @@
+{% extends "dashboard.html" %}
+{% load static %}
+{% block start %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="doctor-info">
+                <img src="{% static 'members/images/profile.png' %}" alt="Dr. John Doe" class="img-thumbnail"style="width: 100px; height: auto;">
+                <h2>Dr. John Doe</h2>
+                <p>Degree: Doctor of Medicine (MD)</p>
+                <p>Specialization: Psychiatric </p>
+                <p>Experience: 10 years</p>
+                <p>NMC no.: 580</p>
+                <div class="rating">
+                    <!-- Rating star icons -->
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <a href="/appointment_form/"><button class="btn btn-success gradient d-block mx-auto">Schedule Appointment</button></a>
+            </div>
+            <div class="doctor-info">
+                <img src="{% static 'members/images/profile.png' %}" alt="Dr. Jane Smith" class="img-thumbnail"style="width: 100px; height: auto;">
+                <h2>Dr. Jane Smith</h2>
+                <p>Degree: Doctor of Medicine</p>
+                <p>Specialization: Psychiatric</p>
+                <p>Experience: 8 years</p>
+                <p>NMC no.: 580</p>
+                <div class="rating">
+                    <!-- Rating star icons -->
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                </div>
+                <button class="btn btn-success gradient d-block mx-auto">Schedule Appointment</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="doctor-info">
+                <img src="{% static 'members/images/profile.png' %}" alt="Dr. Another Doctor" class="img-thumbnail"style="width: 100px; height: auto;">
+                <h2>Dr. Another Doctor</h2>
+                <p>Degree: Doctor of Medicine (MD)</p>
+                <p>Specialization: Another Specialization</p>
+                <p>Experience: 15 years</p>
+                <p>NMC no.: 580</p>
+                <div class="rating">
+                    <!-- Rating star icons -->
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                </div>
+                <button class="btn btn-success gradient d-block mx-auto">Schedule Appointment</button>
+            </div>
+            <div class="doctor-info">
+                <img src="{% static 'members/images/profile.png' %}" alt="Dr. Additional Doctor" class="img-thumbnail"style="width: 100px; height: auto;">
+                <h2>Dr. Additional Doctor</h2>
+                <p>Degree: Doctor of Osteopathic Medicine (DO)</p>
+                <p>Specialization: Additional Specialization</p>
+                <p>Experience: 12 years</p>
+                <p>NMC no.: 580</p>
+                <div class="rating">
+                    <!-- Rating star icons -->
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                    <span class="star">&#9734;</span>
+                </div>
+                <button class="btn btn-success gradient d-block mx-auto">Schedule Appointment</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
